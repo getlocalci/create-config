@@ -1,20 +1,21 @@
-# Create Config
+<div align="center">
+<h1>Create Config</h1>
+<p>Creates a CircleCI® config with as litle as 3 lines of code.</p>
+</div>
 
-## Usage
+## Basic Usage
 
 ```typescript
-import { createConfig } from "@getlocalci/create-config";
-import type { JobNames } from "@getlocalci/create-config";
+import { createConfig, JobNames } from "@getlocalci/create-config";
 
 createConfig(JobNames.PhpLint, JobNames.PhpTest, JobNames.Zip);
 ```
 
-### Adding A Custom Job
+## Adding A Custom Job
 
 ```typescript
 import CircleCI from "@circleci/circleci-config-sdk";
-import { createConfig } from "@getlocalci/create-config";
-import type { JobNames } from "@getlocalci/create-config";
+import { createConfig, JobNames } from "@getlocalci/create-config";
 
 createConfig(
   JobNames.JsLint,

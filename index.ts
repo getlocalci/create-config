@@ -1,10 +1,6 @@
 import * as fs from "fs";
 import CircleCI from "@circleci/circleci-config-sdk";
 
-const config = new CircleCI.Config();
-const workflow = new CircleCI.Workflow("test-lint");
-config.addWorkflow(workflow);
-
 export const JobNames = {
   PhpLint: "php-lint",
   PhpTest: "php-test",
@@ -63,23 +59,30 @@ const preCreatedJobs = [
   ),
 ];
 
-export default function createConfig(...jobs: (string | CircleCI.Job)[]) {
-  jobs.forEach((job) => {
-    if (job instanceof CircleCI.Job) {
+/** Not needed for the public API, simply use createConfig(). */
+export function getJobs(...jobs: (string | CircleCI.Job)[]) {
+  return jobs
+    .map((job) => {
+      return typeof job === 'string'
+        ? preCreatedJobs.find((preCreatedJob) => {
+          return job === preCreatedJob.name;
+        })
+        : job;
+    })
+}
+
+/** Creates and writes the config, given the passed jobs. */
+export function createConfig(...jobs: (string | CircleCI.Job)[]) {
+  const config = new CircleCI.Config();
+  const workflow = new CircleCI.Workflow("test-lint");
+  config.addWorkflow(workflow);
+
+  getJobs(...jobs).forEach((job) => {
+    if (job) {
       config.addJob(job);
       workflow.addJob(job);
-      return;
     }
-
-    if (!preCreatedJobs[job]) {
-      throw new Error(
-        `Job ${job} does not exist. Please use the JobNames type, like JobNames.JsTest.`
-      );
-    }
-
-    config.addJob(preCreatedJobs[job]);
-    workflow.addJob(preCreatedJobs[job]);
-  });
+  })
 
   fs.writeFile("./dynamicConfig.yml", config.stringify(), () => {});
 }
