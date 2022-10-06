@@ -11,9 +11,9 @@ So you don't have to copy-paste `.yml` in your CircleCI® configs.
 ## Writing Your Own
 Feel free to fork this into your own Create Config repo.
 
-You might like different settings, like different image sizes.
+You might want different settings, like different image sizes.
 
-Or maybe you use languages.
+Or maybe you use different languages.
 
 This has JavaScript and PHP.
 
@@ -50,6 +50,11 @@ For example, maybe you have a typical config you use for most of your repos.
 But maybe a certain repo needs a specific job that no other repos need.
 
 You can pass the `CircleCI.Job` as an argument to `createConfig()`.
+
+## Thank You
+Thanks to [Kyle Tryon](https://github.com/KyleTryon) and [Jaryt Bustard](https://github.com/Jaryt) for their great work on the [CircleCI Config SDK](https://github.com/CircleCI-Public/circleci-config-sdk-ts).
+
+This repo uses [Kyle's idea](https://circleci.com/blog/config-sdk/) of a common function in different repos.
 
 ## Live Example
 See this in action at [.circleci/dynamic/](.circleci/dynamic/).
