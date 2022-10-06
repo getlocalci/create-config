@@ -43,16 +43,16 @@ createConfig(
 );
 ```
 
-Here, you [add a](https://getlocalci.com/circleci-config-sdk-tutorial/#last-2-jobs) `CircleCI.Job` with your own values.
+Here, you can [add a](https://getlocalci.com/circleci-config-sdk-tutorial/#last-2-jobs) `CircleCI.Job` with your own values.
 
 For example, maybe you have a typical config you use for most of your repos.
 
-But maybe a certain repo needs a specific job that no other repos need.
+But maybe a repo needs a job that no other repos need.
 
-You can pass the `CircleCI.Job` as an argument to `createConfig()`.
+You can pass that `CircleCI.Job` as an argument to `createConfig()`.
 
 ## Thank You
-Thanks to [Kyle Tryon](https://github.com/KyleTryon) and [Jaryt Bustard](https://github.com/Jaryt) for their great work on the [CircleCI Config SDK](https://github.com/CircleCI-Public/circleci-config-sdk-ts).
+Thank you, [Kyle Tryon](https://github.com/KyleTryon) and [Jaryt Bustard](https://github.com/Jaryt), for your great work on the [CircleCI Config SDK](https://github.com/CircleCI-Public/circleci-config-sdk-ts).
 
 This repo uses [Kyle's idea](https://circleci.com/blog/config-sdk/) of a common function in different repos.
 
