@@ -77,7 +77,7 @@ const preCreatedJobs = [
         command: `mkdir /tmp/artifacts
           mv ${
             JSON.parse(
-              fs.readFileSync("../../package.json")?.toString() ?? "{}"
+              fs.readFileSync("../package.json")?.toString() ?? "{}"
             ).name
           }.vsix /tmp/artifacts`,
       }),
