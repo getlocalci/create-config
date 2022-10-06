@@ -81,7 +81,7 @@ const preCreatedJobs = [
               ? fs.readFileSync("../../package.json")?.toString()
               : "{}"
             ).name
-          }.vsix /tmp/artifacts`,
+          }*.vsix /tmp/artifacts`,
       }),
       new CircleCI.commands.StoreArtifacts({ path: "/tmp/artifacts" }),
     ]
