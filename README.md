@@ -1,17 +1,15 @@
 <div align="center">
 <h1>Create Config</h1>
-<p>Creates a CircleCI® config with as little as 3 lines of code.</p>
+<p>Create a CircleCI® config with as little as 3 lines of code.</p>
 </div>
 
 ## Reusable
 You can use this config in any of your projects.
 
-So you don't have to copy-paste CircleCI® config `.yml.`
+So you don't have to copy-paste `.yml` in your CircleCI® configs.
 
 ## Writing Your Own
-This is an example for you to write your own Create Config repo.
-
-Feel free to fork this.
+Feel free to fork this into your own Create Config repo.
 
 You might like different settings, like different image sizes.
 
