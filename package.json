@@ -1,6 +1,6 @@
 {
   "name": "@getlocalci/create-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create a config file with a minimum of code.",
   "author": "Ryan Kienstra",
   "main": "index.ts",
