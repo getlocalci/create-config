@@ -5,9 +5,9 @@
 
 This is an example for you to write your own Create Config repo.
 
-Feel free to use this.
+Feel free to fork this.
 
-Though you might like different settings, like different image sizes.
+You might like different settings, like different image sizes.
 
 Or maybe you use languages.
 
