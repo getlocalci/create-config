@@ -25,7 +25,7 @@
   "license": "GPL-2.0-or-later",
   "devDependencies": {
     "@types/glob": "^8.0.0",
-    "@types/node": "^18.7.20",
+    "@types/node": "^18.8.2",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",

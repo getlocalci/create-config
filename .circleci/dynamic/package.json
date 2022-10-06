@@ -1,6 +1,6 @@
 {
   "name": "create-config-dynamic-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dynamic config for Create Config",
   "author": "Ryan Kienstra",
   "main": "index.ts",
