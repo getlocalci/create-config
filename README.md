@@ -3,6 +3,12 @@
 <p>Creates a CircleCI® config with as little as 3 lines of code.</p>
 </div>
 
+## Reusable
+You can use this config in any of your projects.
+
+So you don't have to copy-paste CircleCI® config `.yml.`
+
+## Writing Your Own
 This is an example for you to write your own Create Config repo.
 
 Feel free to fork this.
