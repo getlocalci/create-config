@@ -9,6 +9,10 @@ Feel free to use this.
 
 Though you might like different settings, like different image sizes.
 
+Or maybe you use languages.
+
+This has JavaScript and PHP.
+
 ## Basic Usage
 
 ```typescript
