@@ -76,7 +76,11 @@ const preCreatedJobs = [
       new CircleCI.commands.Run({
         command: `mkdir /tmp/artifacts
           mv ${
-            JSON.parse(fs.readFileSync("package.json")?.toString() ?? "{}").name
+            JSON.parse(
+              fs.existsSync("../../package.json")
+              ? fs.readFileSync("../../package.json")?.toString()
+              : "{}"
+            ).name
           }.vsix /tmp/artifacts`,
       }),
       new CircleCI.commands.StoreArtifacts({ path: "/tmp/artifacts" }),
