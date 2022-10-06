@@ -45,6 +45,10 @@ Here, you [add a](https://getlocalci.com/circleci-config-sdk-tutorial/#last-2-jo
 
 For example, maybe you have a typical config you use for most of your repos.
 
-But a certain repo needs a specific job that no other repos need.
+But maybe a certain repo needs a specific job that no other repos need.
 
 You can pass the `CircleCI.Job` as an argument to `createConfig()`.
+
+See this in action at [.circleci/dynamic/](.circleci/dynamic/).
+
+This repo uses its own `createConfig()` to test itself.
