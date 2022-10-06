@@ -78,8 +78,8 @@ const preCreatedJobs = [
           mv ${
             JSON.parse(
               fs.existsSync("../../package.json")
-              ? fs.readFileSync("../../package.json")?.toString()
-              : "{}"
+                ? fs.readFileSync("../../package.json")?.toString()
+                : "{}"
             ).name
           }*.vsix /tmp/artifacts`,
       }),

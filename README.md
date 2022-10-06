@@ -52,7 +52,7 @@ But maybe a repo needs a job that no other repos need.
 You can pass that `CircleCI.Job` as an argument to `createConfig()`.
 
 ## Thank You
-Thank you, [Kyle Tryon](https://github.com/KyleTryon) and [Jaryt Bustard](https://github.com/Jaryt), for your great work on the [CircleCI Config SDK](https://github.com/CircleCI-Public/circleci-config-sdk-ts).
+Thank you, [Kyle Tryon](https://github.com/KyleTryon) and [Jaryt Bustard](https://github.com/Jaryt), for creating the [CircleCI Config SDK](https://github.com/CircleCI-Public/circleci-config-sdk-ts).
 
 This repo uses [Kyle's idea](https://circleci.com/blog/config-sdk/) of a common function in different repos.
 
