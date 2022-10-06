@@ -1,7 +1,13 @@
 <div align="center">
 <h1>Create Config</h1>
-<p>Creates a CircleCI® config with as litle as 3 lines of code.</p>
+<p>Creates a CircleCI® config with as little as 3 lines of code.</p>
 </div>
+
+This is an example for you to write your own Create Config repo, not for you to use this.
+
+You might have different preferences, like a medium image size.
+
+You might have entirely different languages or jobs to run.
 
 ## Basic Usage
 

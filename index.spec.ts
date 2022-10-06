@@ -1,32 +1,32 @@
 import CircleCI from "@circleci/circleci-config-sdk";
-import { getJobs, JobNames } from ".";
+import { getJobs, JobNames } from "./index.js";
 
-describe("getJobs", () => {
-  it("can get jobs using JobNames", () => {
-    const jobs = getJobs(JobNames.JsLint, JobNames.JsTest);
+function assertEquals(expected: any, actual: any) {
+  if (expected !== actual) {
+    throw new Error(`Expected ${expected}, but got ${actual}`)
+  }
+}
 
-    expect(jobs.length).toBe(2);
-    expect(jobs[0] instanceof CircleCI.Job).toBe(true);
-    expect(jobs[1] instanceof CircleCI.Job).toBe(true);
+const simpleJobs = getJobs(JobNames.JsLint, JobNames.JsTest);
 
-    expect((jobs[0]).name).toBe(JobNames.JsLint);
-    expect((jobs[1]).name).toBe(JobNames.JsTest);
-  });
+assertEquals(2, simpleJobs.length);
+assertEquals(true, simpleJobs[0] instanceof CircleCI.Job);
+assertEquals(true, simpleJobs[1] instanceof CircleCI.Job);
 
-  it("can get a custom job", () => {
-    const jobs = getJobs(
-      JobNames.JsLint,
-      new CircleCI.Job(
-        "python-test",
-        new CircleCI.executors.DockerExecutor("cimg/python:3.10.7", "large"),
-        [
-          new CircleCI.commands.Checkout(),
-          new CircleCI.commands.Run({ command: "pip install && python -m pytest" }),
-        ]
-      )
-    );
+assertEquals(JobNames.JsLint, simpleJobs[0].name);
+assertEquals(JobNames.JsTest, simpleJobs[1].name);
 
-    expect(jobs.length).toBe(2);
-    expect((jobs[1]).name).toBe("python-test");
-  });
-});
+const complexJobs = getJobs(
+  JobNames.JsLint,
+  new CircleCI.Job(
+    "python-test",
+    new CircleCI.executors.DockerExecutor("cimg/python:3.10.7", "large"),
+    [
+      new CircleCI.commands.Checkout(),
+      new CircleCI.commands.Run({ command: "pip install && python -m pytest" }),
+    ]
+  )
+);
+
+assertEquals(2, complexJobs.length);
+assertEquals("python-test", complexJobs[1].name);

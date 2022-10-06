@@ -8,6 +8,7 @@ jobs:
     executor: node/default
     steps:
       - checkout
+      - node/install-packages
       - node/install-packages:
           app-dir: .circleci/dynamic
       - run:

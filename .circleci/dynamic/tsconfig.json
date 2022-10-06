@@ -3,7 +3,7 @@
     "module": "ESNext",
     "target": "ESNext",
     "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "noEmit": true
+    "noEmit": true,
+    "esModuleInterop": true
   }
 }
