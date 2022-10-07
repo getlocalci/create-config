@@ -1,7 +1,7 @@
-import path from "path";
+import CircleCI from "@circleci/circleci-config-sdk";
 import fs from "fs";
 import glob from "glob";
-import CircleCI, { Job } from "@circleci/circleci-config-sdk";
+import path from "path";
 
 /**
  * Job names you can pass to createConfig().
