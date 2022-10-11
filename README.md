@@ -59,4 +59,4 @@ This repo uses [Kyle's idea](https://circleci.com/blog/config-sdk/) of a common 
 ## Live Example
 See this in action at [.circleci/dynamic/](.circleci/dynamic/).
 
-This repo uses its own `createConfig()` to test itself.
+This repo uses its own `createConfig()` to test itself 🤣
