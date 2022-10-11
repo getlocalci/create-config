@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import glob from "glob";
-import CircleCI, { Job } from "@circleci/circleci-config-sdk";
+import CircleCI from "@circleci/circleci-config-sdk";
 
 /**
  * Job names you can pass to createConfig().
@@ -17,10 +17,12 @@ export const JobNames = {
   Zip: "zip",
 };
 
+const nodeExecutor = new CircleCI.executors.DockerExecutor("cimg/node:lts", "large");
+
 const preCreatedJobs = [
   new CircleCI.Job(
     JobNames.JsLint,
-    new CircleCI.executors.DockerExecutor("cimg/node:lts", "large"),
+    nodeExecutor,
     [
       new CircleCI.commands.Checkout(),
       new CircleCI.commands.Run({
@@ -30,7 +32,7 @@ const preCreatedJobs = [
   ),
   new CircleCI.Job(
     JobNames.JsTest,
-    new CircleCI.executors.DockerExecutor("cimg/node:lts", "large"),
+    nodeExecutor,
     [
       new CircleCI.commands.Checkout(),
       new CircleCI.commands.Run({ command: "npm ci && npm test" }),
