@@ -17,27 +17,22 @@ export const JobNames = {
   Zip: "zip",
 };
 
-const nodeExecutor = new CircleCI.executors.DockerExecutor("cimg/node:lts", "large");
+const nodeExecutor = new CircleCI.executors.DockerExecutor(
+  "cimg/node:lts",
+  "large"
+);
 
 const preCreatedJobs = [
-  new CircleCI.Job(
-    JobNames.JsLint,
-    nodeExecutor,
-    [
-      new CircleCI.commands.Checkout(),
-      new CircleCI.commands.Run({
-        command: "npm ci && npm run lint",
-      }),
-    ]
-  ),
-  new CircleCI.Job(
-    JobNames.JsTest,
-    nodeExecutor,
-    [
-      new CircleCI.commands.Checkout(),
-      new CircleCI.commands.Run({ command: "npm ci && npm test" }),
-    ]
-  ),
+  new CircleCI.Job(JobNames.JsLint, nodeExecutor, [
+    new CircleCI.commands.Checkout(),
+    new CircleCI.commands.Run({
+      command: "npm ci && npm run lint",
+    }),
+  ]),
+  new CircleCI.Job(JobNames.JsTest, nodeExecutor, [
+    new CircleCI.commands.Checkout(),
+    new CircleCI.commands.Run({ command: "npm ci && npm test" }),
+  ]),
   new CircleCI.Job(
     JobNames.PhpLint,
     new CircleCI.executors.DockerExecutor("cimg/php:8.0", "large"),
