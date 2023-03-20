@@ -22,7 +22,7 @@
     "lint:fix": "prettier --write index.ts",
     "test": "ts-node --esm index.spec.ts"
   },
-  "license": "GPL-2.0-or-later",
+  "license": "MIT",
   "devDependencies": {
     "@types/glob": "^8.0.0",
     "@types/node": "^18.8.2",
