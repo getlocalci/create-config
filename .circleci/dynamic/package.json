@@ -10,7 +10,7 @@
     "lint:fix": "prettier --write index.ts",
     "start": "ts-node --esm index.ts"
   },
-  "license": "GPL-2.0-or-later",
+  "license": "MIT",
   "devDependencies": {
     "@getlocalci/create-config": "file:../../",
     "prettier": "^2.7.1",
